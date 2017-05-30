@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <h1>MOVIE TIME!</h1>
+</head>
+<body>
+     <div id="sidebar">
+<ul id="mama">
+</ul>
+</div>
+<script>
+var movie=new XMLHttpRequest();
+movie.open("GET","https://api.themoviedb.org/4/list/123?page=1&api_key=3914aad40f0db27d02c7219183abe195",false);
+movie.send(null);
+var r=JSON.parse(movie.response);
+var obj=[];
+var obj1=[];
+for(var i=0;i<10;i++){
+obj.push(JSON.stringify(r["results"][i]["original_title"]));
+
+}
+for(var i=0;i<10;i++){
+var o=obj[i];
+var li=document.createElement("li");
+var newAnchor=document.createElement("a");
+newAnchor.textContent=o;
+newAnchor.setAttribute('href',"");
+li.appendChild(newAnchor);
+mama.appendChild(li);}
+</script>
+</body>
+</htm
